@@ -1,0 +1,24 @@
+Getting your dependencies into Lambda seems to be a hassle.
+Potentially, the CLI makes this easy but I am ignoring that for now and doing everything manually.
+Process allows you to import a zip file of your dependencies as a "Layer" which your function can then connect to.
+The difficulty seems to be formatting said zip file correctly.
+Resource I used that was ultimately successful was:
+https://aws.amazon.com/premiumsupport/knowledge-center/lambda-import-module-error-python/
+Though this involved spinning up a new Linux EC2 instance. This should be doable locally. At one point I saw a resource
+that suggested doing it in a Docker container though I can't seem to find it anymore.
+Other promising resources I found were:
+This comprehensive video that described the process well but seems to produce a somehow incorrectly formatted zip file:
+https://www.youtube.com/watch?v=1UDEp90S9h8
+This StackOverflow post that describes the required format of the zip file, but I haven't been able to implement it:
+https://stackoverflow.com/questions/69125055/aws-lambda-function-does-not-recognize-my-python-dependency-layer
+I'm not sure that I tried this, but it seems like it might work well:
+https://sysopstechnix.com/import-python-libraries-for-aws-lambda-layers/
+Directions of inquiry:
+"create Lambda Python Layer from requirements.txt"
+"create Lambda Python Layer in a Docker instance"
+TODO Items:
+-Interface with S3 storage for logging output
+-Force authentication to access API
+-Maybe build out a mini-frontend to interact without Postman (not really the point but can be fine refresher or can try
+new frontend stack)
+
