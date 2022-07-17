@@ -1,2 +1,3 @@
 .env
 Virtualenv/
+S3_Connection/S3-connector-credentials.csv
